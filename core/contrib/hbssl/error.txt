@@ -1,0 +1,158 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.2.2
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+hbmk2: Construyendo sub-proyecto (nivel 2): hbssls.hbp
+hbmk2: Dependencia 'openssl' encontrada:
+       c:\vcpkg\packages\openssl_x64-windows\include
+hbmk2: Harbour: Compilando módulos...
+Harbour 3.2.0dev (r2104281802)
+Copyright (c) 1999-2021, https://harbour.github.io/
+Compiling 'hbssl.hbx'...
+Lines 386, Functions/Procedures 1
+Generating C source output to '.hbmk\win\msvc64\hbssls\hbssl.c'... Done.
+Compiling 'ssl_hbcon.prg'...
+Lines 91, Functions/Procedures 3
+Generating C source output to '.hbmk\win\msvc64\hbssls\ssl_hbcon.c'... Done.
+hbmk2: Compilando...
+hbssl.c
+ssl_hbcon.c
+ssl_hb.c
+ssl_inet.c
+ssl_sock.c
+ssl_sock.c(293): warning C4244: 'función': conversión de 'HB_SOCKET' a 'int'; posible pérdida de datos
+bio.c
+err.c
+evp.c
+evpciph.c
+evpenc.c
+evpmd.c
+evppkey.c
+pem.c
+rand.c
+ssl.c
+sslciph.c
+sslctx.c
+sslsess.c
+x509.c
+crt.c
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(104): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(105): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(106): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(107): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(108): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(109): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(110): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(111): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(112): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(113): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(115): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(116): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(117): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(118): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(119): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(120): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(121): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(123): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(124): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(125): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(126): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(127): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(115): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(123): warning C4996: '_open': This function or variable may be unsafe. Consider using _sopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+crt.c(137): warning C4090: 'inicializando': distintos calificadores 'const'
+crt.c(138): warning C4090: 'inicializando': distintos calificadores 'const'
+Generando código...
+hbmk2: Creando librería estática... hbssls.lib
+hbmk2: Dependencia 'openssl' encontrada:
+       c:\vcpkg\packages\openssl_x64-windows\include
+   Creando biblioteca libcrypto-1_1-x64.lib y objeto libcrypto-1_1-x64.exp
+hbmk2: Biblioteca de importación creada: libcrypto-1_1-x64.lib <=
+       c:\vcpkg\packages\openssl_x64-windows\bin\libcrypto-1_1-x64.dll
+   Creando biblioteca libssl-1_1-x64.lib y objeto libssl-1_1-x64.exp
+hbmk2: Biblioteca de importación creada: libssl-1_1-x64.lib <=
+       c:\vcpkg\packages\openssl_x64-windows\bin\libssl-1_1-x64.dll
+hbmk2: Harbour: Compilando módulos...
+Harbour 3.2.0dev (r2104281802)
+Copyright (c) 1999-2021, https://harbour.github.io/
+Compiling 'hbssl.hbx'...
+Lines 386, Functions/Procedures 1
+Generating C source output to '.hbmk\win\msvc64\hbssl\hbssl.c'... Done.
+Compiling 'ssl_hbcon.prg'...
+Lines 91, Functions/Procedures 3
+Generating C source output to '.hbmk\win\msvc64\hbssl\ssl_hbcon.c'... Done.
+hbmk2: Compilando...
+hbssl.c
+ssl_hbcon.c
+ssl_hb.c
+ssl_inet.c
+ssl_sock.c
+ssl_sock.c(293): warning C4244: 'función': conversión de 'HB_SOCKET' a 'int'; posible pérdida de datos
+bio.c
+err.c
+evp.c
+evpciph.c
+evpenc.c
+evpmd.c
+evppkey.c
+pem.c
+rand.c
+ssl.c
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(104): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(105): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(106): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(107): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(108): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(109): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(110): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(111): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(112): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(113): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(115): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(116): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(117): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(118): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(119): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(120): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(121): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(123): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(124): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(125): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(126): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(127): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+sslciph.c
+sslctx.c
+sslsess.c
+x509.c
+crt.c
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(104): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(105): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(106): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(107): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(108): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(109): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(110): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(111): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(112): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(113): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(115): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(116): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(117): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(118): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(119): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(120): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(121): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(123): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(124): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(125): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(126): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(127): warning C4152: extensión no estándar; conversión de puntero a función/datos en la expresión
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(115): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\vcpkg\packages\openssl_x64-windows\include\openssl/applink.c(123): warning C4996: '_open': This function or variable may be unsafe. Consider using _sopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+crt.c(137): warning C4090: 'inicializando': distintos calificadores 'const'
+crt.c(138): warning C4090: 'inicializando': distintos calificadores 'const'
+Generando código...
+hbmk2: Creando librería estática... hbssl.lib
+ssl.obj : warning LNK4006: OPENSSL_Applink ya se definió en crt.obj; segunda definición omitida
+Presione una tecla para continuar . . .

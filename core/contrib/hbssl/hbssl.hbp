@@ -1,0 +1,19 @@
+# Keep them at top
+-depimplibs=openssl:../out32dll/libcrypto-1_1-x64.dll
+-depimplibs=openssl:../out32dll/libssl-1_1-x64.dll
+-depimplibs=openssl:../dll/libcrypto-1_1-x64.dll
+-depimplibs=openssl:../dll/libssl-1_1-x64.dll
+-depimplibs=openssl:../libcrypto-1_1-x64.dll
+-depimplibs=openssl:../libssl-1_1-x64.dll
+-depimplibs=openssl:../bin/libcrypto-1_1.dll
+-depimplibs=openssl:../bin/libssl-1_1.dll
+-depimplibs=openssl:../bin/libcrypto-1_1-x64.dll
+-depimplibs=openssl:../bin/libssl-1_1-x64.dll
+
+hbssl.hbm
+
+{allwin&HBMK_HAS_OPENSSL}-cflag=-I${HB_WITH_OPENSSL}/../inc32
+
+-iflag={bcc}-a
+
+hbssls.hbp
