@@ -1,0 +1,127 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbmisc/calldll.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC_EXTERN( HB_MUTEXCREATE );
+HB_FUNC( UNLOADALLDLL );
+HB_FUNC_EXTERN( HB_MUTEXLOCK );
+HB_FUNC_EXTERN( HB_MUTEXUNLOCK );
+HB_FUNC( CALLDLL32 );
+HB_FUNC( HB_DYNACALL1 );
+HB_FUNC_EXTERN( HB_ISSTRING );
+HB_FUNC_EXTERN( HB_LIBLOAD );
+HB_FUNC_EXTERN( HB_ISNUMERIC );
+HB_FUNC_EXTERN( PCOUNT );
+HB_FUNC_EXTERN( ASIZE );
+HB_FUNC_EXTERN( HB_APARAMS );
+HB_FUNC_EXTERN( HB_DYNCALL );
+HB_FUNC( STRPTR );
+HB_FUNC( PTRSTR );
+HB_FUNC_INITSTATICS();
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_CALLDLL )
+{ "HB_MUTEXCREATE", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_MUTEXCREATE )}, NULL },
+{ "UNLOADALLDLL", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( UNLOADALLDLL )}, NULL },
+{ "HB_MUTEXLOCK", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_MUTEXLOCK )}, NULL },
+{ "HB_MUTEXUNLOCK", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_MUTEXUNLOCK )}, NULL },
+{ "CALLDLL32", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( CALLDLL32 )}, NULL },
+{ "HB_DYNACALL1", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( HB_DYNACALL1 )}, NULL },
+{ "HB_ISSTRING", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_ISSTRING )}, NULL },
+{ "HB_LIBLOAD", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_LIBLOAD )}, NULL },
+{ "HB_ISNUMERIC", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_ISNUMERIC )}, NULL },
+{ "PCOUNT", {HB_FS_PUBLIC}, {HB_FUNCNAME( PCOUNT )}, NULL },
+{ "ASIZE", {HB_FS_PUBLIC}, {HB_FUNCNAME( ASIZE )}, NULL },
+{ "HB_APARAMS", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_APARAMS )}, NULL },
+{ "HB_DYNCALL", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_DYNCALL )}, NULL },
+{ "STRPTR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( STRPTR )}, NULL },
+{ "PTRSTR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( PTRSTR )}, NULL },
+{ "(_INITSTATICS00002)", {HB_FS_INITEXIT | HB_FS_LOCAL}, {hb_INITSTATICS}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_CALLDLL, "hbmisc/calldll.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_CALLDLL
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_CALLDLL )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( UNLOADALLDLL )
+{
+	static const HB_BYTE pcode[] =
+	{
+		116,15,0,176,2,0,103,2,0,20,1,177,0,0,
+		82,1,0,176,3,0,103,2,0,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( CALLDLL32 )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,0,2,176,5,0,95,1,95,2,100,92,3,164,
+		124,2,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( HB_DYNACALL1 )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,2,3,116,15,0,176,6,0,95,1,12,1,29,
+		135,0,176,6,0,95,2,12,1,28,125,176,2,0,
+		103,2,0,20,1,95,2,103,1,0,24,31,15,176,
+		7,0,95,2,12,1,103,1,0,95,2,2,103,1,
+		0,95,2,1,80,5,176,3,0,103,2,0,20,1,
+		176,8,0,95,3,12,1,28,54,95,3,121,16,28,
+		48,95,3,176,9,0,12,0,92,3,49,35,28,35,
+		176,10,0,176,11,0,12,0,95,3,12,2,80,4,
+		176,12,0,95,1,95,5,121,4,3,0,122,95,4,
+		180,124,2,0,7,176,12,0,95,1,95,5,121,4,
+		3,0,122,164,124,2,0,7,100,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( STRPTR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,95,1,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( PTRSTR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,95,1,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_INITSTATICS()
+{
+	static const HB_BYTE pcode[] =
+	{
+		117,15,0,2,0,116,15,0,177,0,0,82,1,0,
+		176,0,0,12,0,82,2,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

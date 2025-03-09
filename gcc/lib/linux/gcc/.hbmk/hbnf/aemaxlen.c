@@ -1,0 +1,62 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbnf/aemaxlen.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( FT_AEMAXLEN );
+HB_FUNC_EXTERN( __DEFAULTNIL );
+HB_FUNC_EXTERN( LEN );
+HB_FUNC_EXTERN( MIN );
+HB_FUNC_EXTERN( MAX );
+HB_FUNC_EXTERN( LTRIM );
+HB_FUNC_EXTERN( TRANSFORM );
+HB_FUNC_EXTERN( VALTYPE );
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_AEMAXLEN )
+{ "FT_AEMAXLEN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_AEMAXLEN )}, NULL },
+{ "__DEFAULTNIL", {HB_FS_PUBLIC}, {HB_FUNCNAME( __DEFAULTNIL )}, NULL },
+{ "LEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( LEN )}, NULL },
+{ "MIN", {HB_FS_PUBLIC}, {HB_FUNCNAME( MIN )}, NULL },
+{ "MAX", {HB_FS_PUBLIC}, {HB_FUNCNAME( MAX )}, NULL },
+{ "LTRIM", {HB_FS_PUBLIC}, {HB_FUNCNAME( LTRIM )}, NULL },
+{ "TRANSFORM", {HB_FS_PUBLIC}, {HB_FUNCNAME( TRANSFORM )}, NULL },
+{ "VALTYPE", {HB_FS_PUBLIC}, {HB_FUNCNAME( VALTYPE )}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_AEMAXLEN, "hbnf/aemaxlen.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_AEMAXLEN
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_AEMAXLEN )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( FT_AEMAXLEN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,3,4,121,80,7,176,1,0,96,2,0,122,20,
+		2,176,1,0,96,3,0,122,20,2,176,1,0,96,
+		4,0,176,2,0,95,1,12,1,95,3,49,23,20,
+		2,176,3,0,95,3,95,4,72,17,176,2,0,95,
+		1,12,1,12,2,80,6,95,3,165,80,5,26,130,
+		0,176,4,0,95,7,176,2,0,95,1,95,5,1,
+		12,1,12,2,80,7,25,105,176,4,0,95,7,176,
+		2,0,176,5,0,176,6,0,95,1,95,5,1,95,
+		2,1,106,3,64,88,0,12,2,12,1,12,1,12,
+		2,80,7,25,66,176,4,0,95,7,176,2,0,176,
+		5,0,176,6,0,95,1,95,5,1,106,3,64,88,
+		0,12,2,12,1,12,1,12,2,80,7,25,30,176,
+		7,0,95,1,95,5,1,12,1,133,3,0,106,2,
+		67,0,25,143,106,2,65,0,25,158,100,25,194,175,
+		5,0,95,6,15,28,222,95,7,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

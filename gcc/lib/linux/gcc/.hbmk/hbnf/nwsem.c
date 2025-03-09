@@ -1,0 +1,184 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbnf/nwsem.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( FT_NWSEMOPEN );
+HB_FUNC_EXTERN( __DEFAULTNIL );
+HB_FUNC_EXTERN( HB_BLEN );
+HB_FUNC_EXTERN( HB_BSUBSTR );
+HB_FUNC_EXTERN( HB_BCHAR );
+HB_FUNC_EXTERN( LEN );
+HB_FUNC_EXTERN( FT_INT86 );
+HB_FUNC_EXTERN( BIN2L );
+HB_FUNC_EXTERN( I2BIN );
+HB_FUNC( FT_NWSEMEX );
+HB_FUNC_EXTERN( BIN2I );
+HB_FUNC_EXTERN( L2BIN );
+HB_FUNC( FT_NWSEMWAIT );
+HB_FUNC_STATIC( _FTNWSEM );
+HB_FUNC( FT_NWSEMSIG );
+HB_FUNC( FT_NWSEMCLOSE );
+HB_FUNC( FT_NWSEMLOCK );
+HB_FUNC( FT_NWSEMUNLOCK );
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_NWSEM )
+{ "FT_NWSEMOPEN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWSEMOPEN )}, NULL },
+{ "__DEFAULTNIL", {HB_FS_PUBLIC}, {HB_FUNCNAME( __DEFAULTNIL )}, NULL },
+{ "HB_BLEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BLEN )}, NULL },
+{ "HB_BSUBSTR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BSUBSTR )}, NULL },
+{ "HB_BCHAR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BCHAR )}, NULL },
+{ "LEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( LEN )}, NULL },
+{ "FT_INT86", {HB_FS_PUBLIC}, {HB_FUNCNAME( FT_INT86 )}, NULL },
+{ "BIN2L", {HB_FS_PUBLIC}, {HB_FUNCNAME( BIN2L )}, NULL },
+{ "I2BIN", {HB_FS_PUBLIC}, {HB_FUNCNAME( I2BIN )}, NULL },
+{ "FT_NWSEMEX", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWSEMEX )}, NULL },
+{ "BIN2I", {HB_FS_PUBLIC}, {HB_FUNCNAME( BIN2I )}, NULL },
+{ "L2BIN", {HB_FS_PUBLIC}, {HB_FUNCNAME( L2BIN )}, NULL },
+{ "FT_NWSEMWAIT", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWSEMWAIT )}, NULL },
+{ "_FTNWSEM", {HB_FS_STATIC | HB_FS_LOCAL}, {HB_FUNCNAME( _FTNWSEM )}, NULL },
+{ "FT_NWSEMSIG", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWSEMSIG )}, NULL },
+{ "FT_NWSEMCLOSE", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWSEMCLOSE )}, NULL },
+{ "FT_NWSEMLOCK", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWSEMLOCK )}, NULL },
+{ "FT_NWSEMUNLOCK", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWSEMUNLOCK )}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_NWSEM, "hbnf/nwsem.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_NWSEM
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_NWSEM )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( FT_NWSEMOPEN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,3,4,92,10,3,1,0,80,5,176,1,0,96,
+		1,0,106,1,0,20,2,176,1,0,96,2,0,121,
+		20,2,176,1,0,96,3,0,121,20,2,176,1,0,
+		96,4,0,121,20,2,176,2,0,95,1,12,1,92,
+		127,15,28,14,176,3,0,95,1,122,92,127,12,3,
+		25,4,95,1,80,1,176,4,0,176,5,0,95,1,
+		12,1,12,1,95,1,72,80,6,97,0,197,0,0,
+		95,5,122,2,95,6,95,5,92,8,2,120,95,5,
+		92,4,2,95,2,95,5,92,3,2,176,6,0,92,
+		33,95,5,20,2,176,7,0,176,8,0,95,5,92,
+		3,1,12,1,176,8,0,95,5,92,4,1,12,1,
+		72,12,1,80,3,95,5,92,2,1,121,35,28,15,
+		97,0,0,1,0,95,5,92,2,1,72,25,7,95,
+		5,92,2,1,93,0,1,50,80,4,95,5,122,1,
+		121,35,28,14,97,0,0,1,0,95,5,122,1,72,
+		25,6,95,5,122,1,93,0,1,50,80,7,95,7,
+		121,35,28,10,95,7,93,0,1,72,25,4,95,7,
+		110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_NWSEMEX )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,2,3,92,10,3,1,0,80,4,176,1,0,96,
+		1,0,121,20,2,176,1,0,96,2,0,121,20,2,
+		176,1,0,96,3,0,121,20,2,97,1,197,0,0,
+		95,4,122,2,176,10,0,176,3,0,176,11,0,95,
+		1,12,1,122,92,2,12,3,12,1,95,4,92,3,
+		2,176,10,0,176,3,0,176,11,0,95,1,12,1,
+		92,3,92,2,12,3,12,1,95,4,92,4,2,176,
+		6,0,92,33,95,4,20,2,95,4,92,3,1,80,
+		2,95,4,92,4,1,121,35,28,15,97,0,0,1,
+		0,95,4,92,4,1,72,25,7,95,4,92,4,1,
+		93,0,1,50,80,3,95,4,122,1,121,35,28,14,
+		97,0,0,1,0,95,4,122,1,72,25,6,95,4,
+		122,1,93,0,1,50,80,5,95,5,121,35,28,10,
+		95,5,93,0,1,72,25,4,95,5,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_NWSEMWAIT )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,2,176,13,0,92,2,95,1,95,2,20,3,
+		7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_NWSEMSIG )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,176,13,0,92,3,95,1,20,2,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_NWSEMCLOSE )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,176,13,0,92,4,95,1,20,2,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_STATIC( _FTNWSEM )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,2,3,92,10,3,1,0,80,4,176,1,0,96,
+		1,0,92,3,20,2,176,1,0,96,2,0,121,20,
+		2,176,1,0,96,3,0,121,20,2,97,0,197,0,
+		0,95,1,72,95,4,122,2,176,10,0,176,3,0,
+		176,11,0,95,2,12,1,122,92,2,12,3,12,1,
+		95,4,92,3,2,176,10,0,176,3,0,176,11,0,
+		95,2,12,1,92,3,92,2,12,3,12,1,95,4,
+		92,4,2,95,3,95,4,92,7,2,176,6,0,92,
+		33,95,4,20,2,95,4,122,1,121,35,28,14,97,
+		0,0,1,0,95,4,122,1,72,25,6,95,4,122,
+		1,93,0,1,50,80,5,95,5,121,35,28,10,95,
+		5,93,0,1,72,25,4,95,5,80,5,95,5,110,
+		7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_NWSEMLOCK )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,2,2,121,80,3,176,0,0,95,1,121,96,2,
+		0,96,3,0,12,4,80,4,95,4,121,8,28,15,
+		95,3,122,69,28,9,176,15,0,95,2,20,1,95,
+		3,122,8,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_NWSEMUNLOCK )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,176,15,0,95,1,12,1,121,8,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

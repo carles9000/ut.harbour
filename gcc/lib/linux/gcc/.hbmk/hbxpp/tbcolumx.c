@@ -1,0 +1,70 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "../contrib/hbxpp/tbcolumx.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( XPP_TBCOLUMN );
+HB_FUNC_EXTERN( __CLSLOCKDEF );
+HB_FUNC_EXTERN( HBCLASS );
+HB_FUNC_EXTERN( TBCOLUMN );
+HB_FUNC_EXTERN( __CLSUNLOCKDEF );
+HB_FUNC_EXTERN( __OBJHASMSG );
+HB_FUNC_INITSTATICS();
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_TBCOLUMX )
+{ "XPP_TBCOLUMN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( XPP_TBCOLUMN )}, NULL },
+{ "__CLSLOCKDEF", {HB_FS_PUBLIC}, {HB_FUNCNAME( __CLSLOCKDEF )}, NULL },
+{ "NEW", {HB_FS_PUBLIC | HB_FS_MESSAGE}, {NULL}, NULL },
+{ "HBCLASS", {HB_FS_PUBLIC}, {HB_FUNCNAME( HBCLASS )}, NULL },
+{ "TBCOLUMN", {HB_FS_PUBLIC}, {HB_FUNCNAME( TBCOLUMN )}, NULL },
+{ "CREATE", {HB_FS_PUBLIC | HB_FS_MESSAGE}, {NULL}, NULL },
+{ "__CLSUNLOCKDEF", {HB_FS_PUBLIC}, {HB_FUNCNAME( __CLSUNLOCKDEF )}, NULL },
+{ "INSTANCE", {HB_FS_PUBLIC | HB_FS_MESSAGE}, {NULL}, NULL },
+{ "__OBJHASMSG", {HB_FS_PUBLIC}, {HB_FUNCNAME( __OBJHASMSG )}, NULL },
+{ "INITCLASS", {HB_FS_PUBLIC | HB_FS_MESSAGE}, {NULL}, NULL },
+{ "(_INITSTATICS00001)", {HB_FS_INITEXIT | HB_FS_LOCAL}, {hb_INITSTATICS}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_TBCOLUMX, "../contrib/hbxpp/tbcolumx.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_TBCOLUMX
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_TBCOLUMX )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( XPP_TBCOLUMN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,3,0,116,10,0,103,1,0,100,8,28,120,176,
+		1,0,104,1,0,12,1,28,110,166,49,0,0,122,
+		80,1,48,2,0,176,3,0,12,0,106,13,120,112,
+		112,95,84,66,67,111,108,117,109,110,0,108,4,4,
+		1,0,108,0,112,3,80,2,48,5,0,95,2,112,
+		0,73,167,14,0,0,176,6,0,104,1,0,95,2,
+		20,2,168,48,7,0,95,2,112,0,80,3,176,8,
+		0,95,3,106,10,73,110,105,116,67,108,97,115,115,
+		0,12,2,28,12,48,9,0,95,3,164,146,1,0,
+		73,95,3,110,7,48,7,0,103,1,0,112,0,110,
+		7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_INITSTATICS()
+{
+	static const HB_BYTE pcode[] =
+	{
+		117,10,0,1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

@@ -1,0 +1,102 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "../contrib/hbct/keytime.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( KEYTIME );
+HB_FUNC_EXTERN( HB_IDLEDEL );
+HB_FUNC_EXTERN( HB_ISNUMERIC );
+HB_FUNC_EXTERN( HB_ISSTRING );
+HB_FUNC_EXTERN( VAL );
+HB_FUNC_EXTERN( SUBSTR );
+HB_FUNC_EXTERN( HB_IDLEADD );
+HB_FUNC_STATIC( DOKEYTIME );
+HB_FUNC_EXTERN( TIME );
+HB_FUNC_EXTERN( HB_KEYPUT );
+HB_FUNC_INITSTATICS();
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_KEYTIME )
+{ "KEYTIME", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( KEYTIME )}, NULL },
+{ "HB_IDLEDEL", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_IDLEDEL )}, NULL },
+{ "HB_ISNUMERIC", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_ISNUMERIC )}, NULL },
+{ "HB_ISSTRING", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_ISSTRING )}, NULL },
+{ "VAL", {HB_FS_PUBLIC}, {HB_FUNCNAME( VAL )}, NULL },
+{ "SUBSTR", {HB_FS_PUBLIC}, {HB_FUNCNAME( SUBSTR )}, NULL },
+{ "HB_IDLEADD", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_IDLEADD )}, NULL },
+{ "DOKEYTIME", {HB_FS_STATIC | HB_FS_LOCAL}, {HB_FUNCNAME( DOKEYTIME )}, NULL },
+{ "TIME", {HB_FS_PUBLIC}, {HB_FUNCNAME( TIME )}, NULL },
+{ "HB_KEYPUT", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_KEYPUT )}, NULL },
+{ "(_INITSTATICS00001)", {HB_FS_INITEXIT | HB_FS_LOCAL}, {hb_INITSTATICS}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_KEYTIME, "../contrib/hbct/keytime.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_KEYTIME
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_KEYTIME )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( KEYTIME )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,4,2,116,10,0,103,1,0,100,69,28,14,176,
+		1,0,103,1,0,20,1,100,82,1,0,176,2,0,
+		95,1,12,1,28,117,176,3,0,95,2,12,1,28,
+		108,176,4,0,176,5,0,95,2,122,92,2,12,3,
+		12,1,80,3,176,4,0,176,5,0,95,2,92,4,
+		92,2,12,3,12,1,80,4,176,4,0,176,5,0,
+		95,2,92,7,92,2,12,3,12,1,80,5,92,255,
+		80,6,176,6,0,89,38,0,0,0,6,0,1,0,
+		2,0,3,0,4,0,5,0,6,0,176,7,0,95,
+		255,95,254,95,253,95,252,95,251,96,250,255,12,6,
+		6,12,1,82,1,0,120,110,7,9,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_STATIC( DOKEYTIME )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,4,6,116,10,0,176,8,0,12,0,80,7,176,
+		4,0,176,5,0,95,7,122,92,2,12,3,12,1,
+		80,8,176,4,0,176,5,0,95,7,92,4,92,2,
+		12,3,12,1,80,9,176,4,0,176,5,0,95,7,
+		92,7,92,2,12,3,12,1,80,10,95,3,92,99,
+		8,28,44,95,8,95,6,15,29,176,0,176,9,0,
+		95,1,20,1,95,8,80,6,95,8,92,23,8,29,
+		157,0,176,1,0,103,1,0,20,1,100,82,1,0,
+		26,142,0,95,4,92,99,8,28,48,95,8,95,3,
+		8,28,41,95,9,95,6,15,28,120,176,9,0,95,
+		1,20,1,95,9,80,6,95,9,92,59,8,28,102,
+		176,1,0,103,1,0,20,1,100,82,1,0,25,88,
+		95,5,92,99,8,28,55,95,8,95,3,8,28,48,
+		95,9,95,4,8,28,41,95,10,95,6,15,28,60,
+		176,9,0,95,1,20,1,95,10,80,6,95,10,92,
+		59,8,28,42,176,1,0,103,1,0,20,1,100,82,
+		1,0,25,28,95,7,95,2,15,28,21,176,9,0,
+		95,1,20,1,176,1,0,103,1,0,20,1,100,82,
+		1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_INITSTATICS()
+{
+	static const HB_BYTE pcode[] =
+	{
+		117,10,0,1,0,116,10,0,179,1,0,1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

@@ -1,0 +1,61 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbnf/nwuid.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( FT_NWUID );
+HB_FUNC_EXTERN( FT_NWLSTAT );
+HB_FUNC_EXTERN( HB_BCHAR );
+HB_FUNC_EXTERN( I2BIN );
+HB_FUNC_EXTERN( HB_BLEN );
+HB_FUNC_EXTERN( SPACE );
+HB_FUNC_EXTERN( FT_INT86 );
+HB_FUNC_EXTERN( ALLTRIM );
+HB_FUNC_EXTERN( STRTRAN );
+HB_FUNC_EXTERN( HB_BSUBSTR );
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_NWUID )
+{ "FT_NWUID", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_NWUID )}, NULL },
+{ "FT_NWLSTAT", {HB_FS_PUBLIC}, {HB_FUNCNAME( FT_NWLSTAT )}, NULL },
+{ "HB_BCHAR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BCHAR )}, NULL },
+{ "I2BIN", {HB_FS_PUBLIC}, {HB_FUNCNAME( I2BIN )}, NULL },
+{ "HB_BLEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BLEN )}, NULL },
+{ "SPACE", {HB_FS_PUBLIC}, {HB_FUNCNAME( SPACE )}, NULL },
+{ "FT_INT86", {HB_FS_PUBLIC}, {HB_FUNCNAME( FT_INT86 )}, NULL },
+{ "ALLTRIM", {HB_FS_PUBLIC}, {HB_FUNCNAME( ALLTRIM )}, NULL },
+{ "STRTRAN", {HB_FS_PUBLIC}, {HB_FUNCNAME( STRTRAN )}, NULL },
+{ "HB_BSUBSTR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BSUBSTR )}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_NWUID, "hbnf/nwuid.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_NWUID
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_NWUID )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( FT_NWUID )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,3,1,92,10,3,1,0,80,2,95,1,100,8,
+		28,9,176,1,0,12,0,80,1,106,2,22,0,80,
+		3,96,3,0,176,2,0,95,1,12,1,135,176,3,
+		0,176,4,0,95,3,12,1,12,1,95,3,72,80,
+		3,176,5,0,92,63,12,1,80,4,97,0,227,0,
+		0,95,2,122,2,95,3,95,2,92,8,2,120,95,
+		2,92,5,2,95,4,95,2,92,9,2,9,95,2,
+		92,6,2,176,6,0,92,33,95,2,20,2,176,7,
+		0,176,8,0,176,9,0,95,2,92,9,1,92,9,
+		92,48,12,3,106,2,0,0,12,2,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

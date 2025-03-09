@@ -1,0 +1,718 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbtpathy/telepath.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( TP_BAUD );
+HB_FUNC_EXTERN( HB_DEFAULT );
+HB_FUNC_STATIC( ISPORT );
+HB_FUNC_EXTERN( EMPTY );
+HB_FUNC_STATIC( ISOPENPORT );
+HB_FUNC_EXTERN( HB_COMINIT );
+HB_FUNC( TP_INKEY );
+HB_FUNC_EXTERN( INKEY );
+HB_FUNC( TP_DELAY );
+HB_FUNC_EXTERN( HB_IDLESLEEP );
+HB_FUNC( TP_CLOSE );
+HB_FUNC( TP_FLUSH );
+HB_FUNC_EXTERN( HB_COMCLOSE );
+HB_FUNC( TP_REOPEN );
+HB_FUNC( TP_OPEN );
+HB_FUNC_EXTERN( HB_ISSTRING );
+HB_FUNC_EXTERN( HB_COMSETDEVICE );
+HB_FUNC_EXTERN( HB_COMOPEN );
+HB_FUNC( TP_RECV );
+HB_FUNC_EXTERN( HB_ISNUMERIC );
+HB_FUNC_STATIC( FETCHCHARS );
+HB_FUNC_EXTERN( SECONDS );
+HB_FUNC_EXTERN( LEN );
+HB_FUNC_EXTERN( TP_IDLE );
+HB_FUNC_EXTERN( SUBSTR );
+HB_FUNC( TP_SEND );
+HB_FUNC_EXTERN( HB_COMSEND );
+HB_FUNC( TP_SENDSUB );
+HB_FUNC( TP_RECVTO );
+HB_FUNC_EXTERN( HB_AT );
+HB_FUNC_EXTERN( MAX );
+HB_FUNC_EXTERN( LEFT );
+HB_FUNC( TP_LOOKFOR );
+HB_FUNC_EXTERN( AT );
+HB_FUNC( TP_INCHRS );
+HB_FUNC( TP_INFREE );
+HB_FUNC_STATIC( __TP_INFREE );
+HB_FUNC( TP_OUTFREE );
+HB_FUNC_STATIC( __TP_OUTFREE );
+HB_FUNC( TP_CLEARIN );
+HB_FUNC( TP_CLRKBD );
+HB_FUNC_EXTERN( __KEYBOARD );
+HB_FUNC( TP_CRC16 );
+HB_FUNC_EXTERN( HB_BYTESWAPW );
+HB_FUNC_EXTERN( HB_CRCCT );
+HB_FUNC( TP_CRC32 );
+HB_FUNC_EXTERN( HB_CRC32 );
+HB_FUNC( TP_WAITFOR );
+HB_FUNC_EXTERN( HB_APARAMS );
+HB_FUNC( TP_CTRLCTS );
+HB_FUNC_EXTERN( HB_COMFLOWCONTROL );
+HB_FUNC_EXTERN( HB_BITAND );
+HB_FUNC_EXTERN( HB_BITNOT );
+HB_FUNC_EXTERN( HB_BITOR );
+HB_FUNC( TP_CTRLRTS );
+HB_FUNC( TP_CTRLDTR );
+HB_FUNC( TP_ISDCD );
+HB_FUNC_EXTERN( HB_COMMSR );
+HB_FUNC( TP_ISRI );
+HB_FUNC( TP_ISDSR );
+HB_FUNC( TP_ISCTS );
+HB_FUNC_EXTERN( HB_IDLESTATE );
+HB_FUNC_EXTERN( SPACE );
+HB_FUNC_EXTERN( HB_COMINPUTCOUNT );
+HB_FUNC_EXTERN( HB_COMRECV );
+HB_FUNC_INIT( _TPINIT );
+HB_FUNC( TP_UNINSTALL );
+HB_FUNC( BIN_AND );
+HB_FUNC( BIN_OR );
+HB_FUNC( BIN_XOR );
+HB_FUNC_EXTERN( HB_BITXOR );
+HB_FUNC( BIN_NOT );
+HB_FUNC_INITSTATICS();
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_TELEPATH )
+{ "TP_BAUD", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_BAUD )}, NULL },
+{ "HB_DEFAULT", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_DEFAULT )}, NULL },
+{ "ISPORT", {HB_FS_STATIC | HB_FS_LOCAL}, {HB_FUNCNAME( ISPORT )}, NULL },
+{ "EMPTY", {HB_FS_PUBLIC}, {HB_FUNCNAME( EMPTY )}, NULL },
+{ "ISOPENPORT", {HB_FS_STATIC | HB_FS_LOCAL}, {HB_FUNCNAME( ISOPENPORT )}, NULL },
+{ "HB_COMINIT", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMINIT )}, NULL },
+{ "TP_INKEY", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_INKEY )}, NULL },
+{ "INKEY", {HB_FS_PUBLIC}, {HB_FUNCNAME( INKEY )}, NULL },
+{ "TP_DELAY", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_DELAY )}, NULL },
+{ "HB_IDLESLEEP", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_IDLESLEEP )}, NULL },
+{ "TP_CLOSE", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CLOSE )}, NULL },
+{ "TP_FLUSH", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_FLUSH )}, NULL },
+{ "HB_COMCLOSE", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMCLOSE )}, NULL },
+{ "TP_REOPEN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_REOPEN )}, NULL },
+{ "TP_OPEN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_OPEN )}, NULL },
+{ "HB_ISSTRING", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_ISSTRING )}, NULL },
+{ "HB_COMSETDEVICE", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMSETDEVICE )}, NULL },
+{ "HB_COMOPEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMOPEN )}, NULL },
+{ "TP_RECV", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_RECV )}, NULL },
+{ "HB_ISNUMERIC", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_ISNUMERIC )}, NULL },
+{ "FETCHCHARS", {HB_FS_STATIC | HB_FS_LOCAL}, {HB_FUNCNAME( FETCHCHARS )}, NULL },
+{ "SECONDS", {HB_FS_PUBLIC}, {HB_FUNCNAME( SECONDS )}, NULL },
+{ "LEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( LEN )}, NULL },
+{ "TP_IDLE", {HB_FS_PUBLIC}, {HB_FUNCNAME( TP_IDLE )}, NULL },
+{ "SUBSTR", {HB_FS_PUBLIC}, {HB_FUNCNAME( SUBSTR )}, NULL },
+{ "TP_SEND", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_SEND )}, NULL },
+{ "HB_COMSEND", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMSEND )}, NULL },
+{ "TP_SENDSUB", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_SENDSUB )}, NULL },
+{ "TP_RECVTO", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_RECVTO )}, NULL },
+{ "HB_AT", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_AT )}, NULL },
+{ "MAX", {HB_FS_PUBLIC}, {HB_FUNCNAME( MAX )}, NULL },
+{ "LEFT", {HB_FS_PUBLIC}, {HB_FUNCNAME( LEFT )}, NULL },
+{ "TP_LOOKFOR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_LOOKFOR )}, NULL },
+{ "AT", {HB_FS_PUBLIC}, {HB_FUNCNAME( AT )}, NULL },
+{ "TP_INCHRS", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_INCHRS )}, NULL },
+{ "TP_INFREE", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_INFREE )}, NULL },
+{ "__TP_INFREE", {HB_FS_STATIC | HB_FS_LOCAL}, {HB_FUNCNAME( __TP_INFREE )}, NULL },
+{ "TP_OUTFREE", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_OUTFREE )}, NULL },
+{ "__TP_OUTFREE", {HB_FS_STATIC | HB_FS_LOCAL}, {HB_FUNCNAME( __TP_OUTFREE )}, NULL },
+{ "TP_CLEARIN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CLEARIN )}, NULL },
+{ "TP_CLRKBD", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CLRKBD )}, NULL },
+{ "__KEYBOARD", {HB_FS_PUBLIC}, {HB_FUNCNAME( __KEYBOARD )}, NULL },
+{ "TP_CRC16", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CRC16 )}, NULL },
+{ "HB_BYTESWAPW", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BYTESWAPW )}, NULL },
+{ "HB_CRCCT", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_CRCCT )}, NULL },
+{ "TP_CRC32", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CRC32 )}, NULL },
+{ "HB_CRC32", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_CRC32 )}, NULL },
+{ "TP_WAITFOR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_WAITFOR )}, NULL },
+{ "HB_APARAMS", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_APARAMS )}, NULL },
+{ "TP_CTRLCTS", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CTRLCTS )}, NULL },
+{ "HB_COMFLOWCONTROL", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMFLOWCONTROL )}, NULL },
+{ "HB_BITAND", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BITAND )}, NULL },
+{ "HB_BITNOT", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BITNOT )}, NULL },
+{ "HB_BITOR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BITOR )}, NULL },
+{ "TP_CTRLRTS", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CTRLRTS )}, NULL },
+{ "TP_CTRLDTR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_CTRLDTR )}, NULL },
+{ "TP_ISDCD", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_ISDCD )}, NULL },
+{ "HB_COMMSR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMMSR )}, NULL },
+{ "TP_ISRI", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_ISRI )}, NULL },
+{ "TP_ISDSR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_ISDSR )}, NULL },
+{ "TP_ISCTS", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_ISCTS )}, NULL },
+{ "HB_IDLESTATE", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_IDLESTATE )}, NULL },
+{ "SPACE", {HB_FS_PUBLIC}, {HB_FUNCNAME( SPACE )}, NULL },
+{ "HB_COMINPUTCOUNT", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMINPUTCOUNT )}, NULL },
+{ "HB_COMRECV", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_COMRECV )}, NULL },
+{ "_TPINIT$", {HB_FS_INIT | HB_FS_LOCAL}, {HB_INIT_FUNCNAME( _TPINIT )}, NULL },
+{ "TP_UNINSTALL", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( TP_UNINSTALL )}, NULL },
+{ "BIN_AND", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( BIN_AND )}, NULL },
+{ "BIN_OR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( BIN_OR )}, NULL },
+{ "BIN_XOR", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( BIN_XOR )}, NULL },
+{ "HB_BITXOR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BITXOR )}, NULL },
+{ "BIN_NOT", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( BIN_NOT )}, NULL },
+{ "(_INITSTATICS00002)", {HB_FS_INITEXIT | HB_FS_LOCAL}, {hb_INITSTATICS}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_TELEPATH, "hbtpathy/telepath.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_TELEPATH
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_TELEPATH )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( TP_BAUD )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,2,116,72,0,176,1,0,96,2,0,121,20,
+		2,176,2,0,95,1,12,1,28,17,176,3,0,103,
+		1,0,95,1,1,122,1,12,1,28,6,92,254,110,
+		7,176,4,0,95,1,12,1,31,5,121,110,7,95,
+		2,121,15,28,58,176,5,0,103,1,0,95,1,1,
+		92,2,1,95,2,103,1,0,95,1,1,92,5,1,
+		103,1,0,95,1,1,92,4,1,103,1,0,95,1,
+		1,92,6,1,12,5,28,13,95,2,103,1,0,95,
+		1,1,92,3,2,103,1,0,95,1,1,92,3,1,
+		110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_INKEY )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,0,0,176,7,0,164,124,1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_DELAY )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,176,1,0,96,1,0,121,20,2,95,1,
+		121,35,28,3,7,95,1,93,8,7,15,28,7,93,
+		8,7,80,1,176,9,0,95,1,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CLOSE )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,2,116,72,0,176,1,0,96,2,0,121,20,
+		2,176,4,0,95,1,12,1,31,5,121,110,7,95,
+		2,121,15,28,11,176,11,0,95,1,95,2,20,2,
+		103,1,0,95,1,1,92,2,1,121,16,28,49,176,
+		12,0,103,1,0,95,1,1,92,2,1,20,1,9,
+		103,1,0,95,1,1,92,7,2,106,1,0,103,1,
+		0,95,1,1,92,8,2,92,255,103,1,0,95,1,
+		1,92,2,2,121,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_REOPEN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,5,3,116,72,0,176,2,0,95,1,12,1,28,
+		17,176,3,0,103,1,0,95,1,1,122,1,12,1,
+		28,6,92,254,110,7,103,1,0,95,1,1,122,1,
+		80,8,103,1,0,95,1,1,92,3,1,80,4,103,
+		1,0,95,1,1,92,4,1,80,5,103,1,0,95,
+		1,1,92,5,1,80,6,103,1,0,95,1,1,92,
+		6,1,80,7,176,14,0,95,1,95,2,95,3,95,
+		4,95,5,95,6,95,7,95,8,20,8,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_OPEN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,8,116,72,0,176,2,0,95,1,12,1,31,
+		6,92,254,110,7,176,1,0,96,2,0,93,0,6,
+		20,2,176,1,0,96,3,0,93,0,6,20,2,176,
+		1,0,96,4,0,93,176,4,20,2,176,1,0,96,
+		5,0,92,8,20,2,176,1,0,96,6,0,106,2,
+		78,0,20,2,176,1,0,96,7,0,122,20,2,176,
+		15,0,95,8,12,1,28,11,176,16,0,95,1,95,
+		8,20,2,95,8,103,1,0,95,1,1,122,2,95,
+		4,103,1,0,95,1,1,92,3,2,95,5,103,1,
+		0,95,1,1,92,4,2,95,6,103,1,0,95,1,
+		1,92,5,2,95,7,103,1,0,95,1,1,92,6,
+		2,9,103,1,0,95,1,1,92,7,2,106,1,0,
+		103,1,0,95,1,1,92,8,2,95,2,103,1,0,
+		95,1,1,92,9,2,92,255,103,1,0,95,1,1,
+		92,2,2,176,17,0,95,1,12,1,28,96,95,1,
+		103,1,0,95,1,1,92,2,2,176,5,0,103,1,
+		0,95,1,1,92,2,1,103,1,0,95,1,1,92,
+		3,1,103,1,0,95,1,1,92,5,1,103,1,0,
+		95,1,1,92,4,1,103,1,0,95,1,1,92,6,
+		1,12,5,28,15,120,103,1,0,95,1,1,92,7,
+		2,121,110,7,176,10,0,103,1,0,95,1,1,92,
+		2,1,20,1,92,255,110,7,106,1,0,103,1,0,
+		95,1,1,122,2,92,255,103,1,0,95,1,1,92,
+		2,2,93,176,4,103,1,0,95,1,1,92,3,2,
+		92,8,103,1,0,95,1,1,92,4,2,106,2,78,
+		0,103,1,0,95,1,1,92,5,2,122,103,1,0,
+		95,1,1,92,6,2,9,103,1,0,95,1,1,92,
+		7,2,106,1,0,103,1,0,95,1,1,92,8,2,
+		121,103,1,0,95,1,1,92,9,2,92,252,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_RECV )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,2,3,116,72,0,176,19,0,95,2,12,1,31,
+		13,103,1,0,95,1,1,92,9,1,80,2,176,1,
+		0,96,3,0,121,20,2,176,20,0,95,1,20,1,
+		176,21,0,12,0,95,3,121,16,28,6,95,3,25,
+		3,121,72,80,4,176,22,0,103,1,0,95,1,1,
+		92,8,1,12,1,95,2,35,28,34,95,3,121,35,
+		31,12,176,21,0,12,0,95,4,35,28,18,176,23,
+		0,12,0,31,11,176,20,0,95,1,20,1,25,207,
+		95,2,176,22,0,103,1,0,95,1,1,92,8,1,
+		12,1,15,28,27,103,1,0,95,1,1,92,8,1,
+		80,5,106,1,0,103,1,0,95,1,1,92,8,2,
+		25,47,176,24,0,103,1,0,95,1,1,92,8,1,
+		122,95,2,12,3,80,5,176,24,0,103,1,0,95,
+		1,1,92,8,1,95,2,23,12,2,103,1,0,95,
+		1,1,92,8,2,95,5,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_SEND )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,3,116,72,0,176,1,0,96,2,0,106,1,
+		0,20,2,176,1,0,96,3,0,121,20,2,176,4,
+		0,95,1,12,1,31,5,121,110,7,176,22,0,95,
+		2,12,1,121,8,28,5,121,110,7,176,26,0,103,
+		1,0,95,1,1,92,2,1,95,2,100,95,3,20,
+		4,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_SENDSUB )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,5,176,1,0,96,3,0,122,20,2,176,19,
+		0,95,4,12,1,31,11,176,22,0,95,2,12,1,
+		80,4,176,25,0,95,1,176,24,0,95,2,95,3,
+		95,4,12,3,95,5,20,3,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_RECVTO )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,6,4,116,72,0,122,80,7,121,80,8,106,1,
+		0,80,10,176,4,0,95,1,12,1,31,7,106,1,
+		0,110,7,176,15,0,95,2,12,1,28,13,176,22,
+		0,95,2,12,1,121,8,28,7,106,1,0,110,7,
+		176,1,0,96,3,0,97,231,253,0,0,20,2,176,
+		1,0,96,4,0,121,20,2,176,20,0,95,1,20,
+		1,95,4,121,8,28,25,176,22,0,103,1,0,95,
+		1,1,92,8,1,12,1,121,8,28,7,106,1,0,
+		110,7,176,21,0,12,0,95,4,121,16,28,6,95,
+		4,25,3,121,72,80,9,95,4,121,35,31,13,176,
+		21,0,12,0,95,9,35,29,174,0,176,22,0,95,
+		2,12,1,122,8,28,50,176,29,0,95,2,103,1,
+		0,95,1,1,92,8,1,95,7,12,3,80,6,95,
+		6,121,15,28,84,95,8,121,15,28,9,95,6,95,
+		8,35,25,3,120,28,68,95,6,80,8,25,62,95,
+		2,96,5,0,129,1,1,28,51,176,29,0,95,5,
+		103,1,0,95,1,1,92,8,1,95,7,12,3,80,
+		6,95,6,121,15,28,22,95,8,121,15,28,9,95,
+		6,95,8,35,25,3,120,28,6,95,6,80,8,130,
+		31,209,132,95,8,121,15,31,48,176,30,0,176,22,
+		0,103,1,0,95,1,1,92,8,1,12,1,122,12,
+		2,80,7,95,7,95,3,16,31,19,176,23,0,12,
+		0,31,12,176,20,0,95,1,20,1,26,71,255,95,
+		8,121,15,28,46,176,31,0,103,1,0,95,1,1,
+		92,8,1,95,8,12,2,80,10,176,24,0,103,1,
+		0,95,1,1,92,8,1,95,8,23,12,2,103,1,
+		0,95,1,1,92,8,2,95,10,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_LOOKFOR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,2,116,72,0,176,4,0,95,1,12,1,31,
+		5,121,110,7,176,20,0,95,1,20,1,176,33,0,
+		95,2,103,1,0,95,1,1,92,8,1,20,2,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_INCHRS )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,116,72,0,176,4,0,95,1,12,1,31,
+		5,121,110,7,176,20,0,95,1,20,1,176,22,0,
+		103,1,0,95,1,1,92,8,1,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_INFREE )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,116,72,0,176,4,0,95,1,12,1,31,
+		5,121,110,7,176,36,0,103,1,0,95,1,1,92,
+		2,1,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_OUTFREE )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,116,72,0,176,4,0,95,1,12,1,31,
+		5,121,110,7,176,38,0,103,1,0,95,1,1,92,
+		2,1,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CLEARIN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,116,72,0,176,4,0,95,1,12,1,28,
+		21,176,20,0,95,1,20,1,106,1,0,103,1,0,
+		95,1,1,92,8,2,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CLRKBD )
+{
+	static const HB_BYTE pcode[] =
+	{
+		176,41,0,20,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CRC16 )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,176,43,0,176,44,0,95,1,12,1,20,
+		1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CRC32 )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,176,46,0,95,1,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_WAITFOR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,2,0,176,48,0,12,0,80,1,95,1,122,1,
+		80,2,176,4,0,95,2,12,1,31,5,121,110,7,
+		121,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CTRLCTS )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,2,2,116,72,0,176,4,0,95,1,12,1,31,
+		5,121,110,7,176,50,0,103,1,0,95,1,1,92,
+		2,1,96,3,0,12,2,28,86,92,3,80,4,176,
+		19,0,95,2,12,1,28,54,95,2,121,8,28,20,
+		176,51,0,95,3,176,52,0,95,4,12,1,12,2,
+		80,2,25,13,176,53,0,95,3,95,4,12,2,80,
+		2,176,50,0,103,1,0,95,1,1,92,2,1,100,
+		95,2,20,3,176,51,0,95,3,95,4,12,2,121,
+		69,28,5,122,25,3,121,80,3,95,3,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CTRLRTS )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,2,176,49,0,95,1,95,2,20,2,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_CTRLDTR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,2,2,116,72,0,176,4,0,95,1,12,1,31,
+		5,121,110,7,176,50,0,103,1,0,95,1,1,92,
+		2,1,96,3,0,12,2,28,86,92,12,80,4,176,
+		19,0,95,2,12,1,28,54,95,2,121,8,28,20,
+		176,51,0,95,3,176,52,0,95,4,12,1,12,2,
+		80,2,25,13,176,53,0,95,3,95,4,12,2,80,
+		2,176,50,0,103,1,0,95,1,1,92,2,1,100,
+		95,2,20,3,176,51,0,95,3,95,4,12,2,121,
+		69,28,5,122,25,3,121,80,3,95,3,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_ISDCD )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,1,176,4,0,95,1,12,1,31,5,9,110,
+		7,176,57,0,95,1,96,2,0,20,2,176,51,0,
+		95,2,93,128,0,12,2,121,69,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_ISRI )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,1,176,4,0,95,1,12,1,31,5,9,110,
+		7,176,57,0,95,1,96,2,0,20,2,176,51,0,
+		95,2,92,64,12,2,121,69,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_ISDSR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,1,176,4,0,95,1,12,1,31,5,9,110,
+		7,176,57,0,95,1,96,2,0,20,2,176,51,0,
+		95,2,92,32,12,2,121,69,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_ISCTS )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,1,176,4,0,95,1,12,1,31,5,9,110,
+		7,176,57,0,95,1,96,2,0,20,2,176,51,0,
+		95,2,92,16,12,2,121,69,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_FLUSH )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,2,176,1,0,96,2,0,92,255,20,2,176,
+		4,0,95,1,12,1,31,6,92,253,110,7,95,2,
+		93,8,7,15,28,7,93,8,7,80,2,176,21,0,
+		12,0,95,2,121,16,28,6,95,2,25,3,121,72,
+		80,3,176,37,0,95,1,12,1,121,15,28,25,95,
+		2,121,35,31,12,176,21,0,12,0,95,3,35,28,
+		9,176,61,0,20,0,25,224,176,37,0,95,1,12,
+		1,121,15,28,6,92,251,25,3,121,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_STATIC( ISOPENPORT )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,116,72,0,176,2,0,95,1,12,1,31,
+		5,9,110,7,103,1,0,95,1,1,92,7,1,110,
+		7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_STATIC( ISPORT )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,1,176,19,0,95,1,12,1,28,15,95,1,
+		122,35,31,9,95,1,92,8,15,28,5,9,110,7,
+		120,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_STATIC( FETCHCHARS )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,1,116,72,0,176,4,0,95,1,12,1,31,
+		5,121,110,7,176,62,0,176,63,0,103,1,0,95,
+		1,1,92,2,1,12,1,12,1,80,2,176,64,0,
+		103,1,0,95,1,1,92,2,1,96,2,0,20,2,
+		103,1,0,95,1,1,92,8,148,95,2,135,176,22,
+		0,95,2,20,1,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_INIT( _TPINIT )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,0,116,72,0,103,1,0,100,8,28,59,92,
+		8,3,1,0,82,1,0,122,165,80,1,25,34,106,
+		1,0,92,255,93,176,4,92,8,106,2,78,0,122,
+		9,106,1,0,121,4,9,0,103,1,0,95,1,2,
+		175,1,0,176,22,0,103,1,0,12,1,15,28,215,
+		7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( TP_UNINSTALL )
+{
+	static const HB_BYTE pcode[] =
+	{
+		7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_STATIC( __TP_INFREE )
+{
+	static const HB_BYTE pcode[] =
+	{
+		92,255,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_STATIC( __TP_OUTFREE )
+{
+	static const HB_BYTE pcode[] =
+	{
+		92,255,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( BIN_AND )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,0,0,176,51,0,164,124,1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( BIN_OR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,0,0,176,53,0,164,124,1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( BIN_XOR )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,0,0,176,70,0,164,124,1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( BIN_NOT )
+{
+	static const HB_BYTE pcode[] =
+	{
+		149,0,0,176,52,0,164,124,1,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_INITSTATICS()
+{
+	static const HB_BYTE pcode[] =
+	{
+		117,72,0,2,0,116,72,0,121,82,2,0,179,2,
+		0,1,0,2,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

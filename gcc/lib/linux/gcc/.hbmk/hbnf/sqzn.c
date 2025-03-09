@@ -1,0 +1,93 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbnf/sqzn.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( FT_SQZN );
+HB_FUNC_EXTERN( __DEFAULTNIL );
+HB_FUNC_EXTERN( INT );
+HB_FUNC_EXTERN( STR );
+HB_FUNC_EXTERN( ABS );
+HB_FUNC_EXTERN( STRTRAN );
+HB_FUNC_EXTERN( HB_BCHAR );
+HB_FUNC_EXTERN( VAL );
+HB_FUNC_EXTERN( HB_BSUBSTR );
+HB_FUNC_EXTERN( HB_BLEN );
+HB_FUNC( FT_UNSQZN );
+HB_FUNC_EXTERN( HB_BCODE );
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_SQZN )
+{ "FT_SQZN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_SQZN )}, NULL },
+{ "__DEFAULTNIL", {HB_FS_PUBLIC}, {HB_FUNCNAME( __DEFAULTNIL )}, NULL },
+{ "INT", {HB_FS_PUBLIC}, {HB_FUNCNAME( INT )}, NULL },
+{ "STR", {HB_FS_PUBLIC}, {HB_FUNCNAME( STR )}, NULL },
+{ "ABS", {HB_FS_PUBLIC}, {HB_FUNCNAME( ABS )}, NULL },
+{ "STRTRAN", {HB_FS_PUBLIC}, {HB_FUNCNAME( STRTRAN )}, NULL },
+{ "HB_BCHAR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BCHAR )}, NULL },
+{ "VAL", {HB_FS_PUBLIC}, {HB_FUNCNAME( VAL )}, NULL },
+{ "HB_BSUBSTR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BSUBSTR )}, NULL },
+{ "HB_BLEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BLEN )}, NULL },
+{ "FT_UNSQZN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_UNSQZN )}, NULL },
+{ "HB_BCODE", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BCODE )}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_SQZN, "hbnf/sqzn.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_SQZN
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_SQZN )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( FT_SQZN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,3,3,176,1,0,96,2,0,92,10,20,2,176,
+		1,0,96,3,0,121,20,2,96,1,0,92,10,95,
+		3,84,137,95,2,92,2,18,176,2,0,95,2,92,
+		2,18,12,1,69,28,7,95,2,23,25,4,95,2,
+		80,2,176,3,0,176,4,0,95,1,12,1,95,2,
+		12,2,80,4,176,5,0,95,4,106,2,32,0,106,
+		2,48,0,12,3,80,4,176,6,0,176,7,0,176,
+		8,0,95,4,122,92,2,12,3,12,1,95,1,121,
+		35,28,7,93,128,0,25,3,121,72,12,1,80,5,
+		92,3,165,80,6,25,33,96,5,0,176,6,0,176,
+		7,0,176,8,0,95,4,95,6,92,2,12,3,12,
+		1,12,1,135,126,6,2,0,95,6,176,9,0,95,
+		4,12,1,15,28,217,95,5,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_UNSQZN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,4,3,106,1,0,80,4,176,1,0,96,2,0,
+		92,10,20,2,176,1,0,96,3,0,121,20,2,95,
+		2,92,2,18,176,2,0,95,2,92,2,18,12,1,
+		69,28,7,95,2,23,25,4,95,2,80,2,176,11,
+		0,95,1,12,1,92,127,15,28,28,176,3,0,176,
+		11,0,95,1,12,1,93,128,0,49,92,2,12,2,
+		80,4,92,255,80,7,25,21,176,3,0,176,11,0,
+		95,1,12,1,92,2,12,2,80,4,122,80,7,92,
+		2,165,80,5,25,31,96,4,0,176,3,0,176,11,
+		0,176,8,0,95,1,95,5,122,12,3,12,1,92,
+		2,12,2,135,175,5,0,176,9,0,95,1,12,1,
+		15,28,219,176,5,0,95,4,106,2,32,0,106,2,
+		48,0,12,3,80,4,176,8,0,95,4,122,95,2,
+		95,3,49,12,3,106,2,46,0,72,176,8,0,95,
+		4,95,2,95,3,49,23,12,2,72,80,6,176,7,
+		0,95,6,12,1,95,7,65,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

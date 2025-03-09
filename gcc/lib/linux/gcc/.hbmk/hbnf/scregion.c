@@ -1,0 +1,109 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbnf/scregion.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( FT_SAVRGN );
+HB_FUNC_EXTERN( HB_BCHAR );
+HB_FUNC_EXTERN( SAVESCREEN );
+HB_FUNC( FT_RSTRGN );
+HB_FUNC_EXTERN( PCOUNT );
+HB_FUNC_EXTERN( RESTSCREEN );
+HB_FUNC_EXTERN( HB_BCODE );
+HB_FUNC_EXTERN( HB_BSUBSTR );
+HB_FUNC( FT_RGNSTACK );
+HB_FUNC_EXTERN( ASIZE );
+HB_FUNC_INITSTATICS();
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_SCREGION )
+{ "FT_SAVRGN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_SAVRGN )}, NULL },
+{ "HB_BCHAR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BCHAR )}, NULL },
+{ "SAVESCREEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( SAVESCREEN )}, NULL },
+{ "FT_RSTRGN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_RSTRGN )}, NULL },
+{ "PCOUNT", {HB_FS_PUBLIC}, {HB_FUNCNAME( PCOUNT )}, NULL },
+{ "RESTSCREEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( RESTSCREEN )}, NULL },
+{ "HB_BCODE", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BCODE )}, NULL },
+{ "HB_BSUBSTR", {HB_FS_PUBLIC}, {HB_FUNCNAME( HB_BSUBSTR )}, NULL },
+{ "FT_RGNSTACK", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_RGNSTACK )}, NULL },
+{ "ASIZE", {HB_FS_PUBLIC}, {HB_FUNCNAME( ASIZE )}, NULL },
+{ "(_INITSTATICS00002)", {HB_FS_INITEXIT | HB_FS_LOCAL}, {hb_INITSTATICS}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_SCREGION, "hbnf/scregion.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_SCREGION
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_SCREGION )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( FT_SAVRGN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,4,176,1,0,95,1,12,1,176,1,0,95,
+		2,12,1,72,176,1,0,95,3,12,1,72,176,1,
+		0,95,4,12,1,72,176,2,0,95,1,95,2,95,
+		3,95,4,12,4,72,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_RSTRGN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,0,3,176,4,0,12,0,92,3,8,28,89,176,
+		5,0,95,2,95,3,95,2,176,6,0,176,7,0,
+		95,1,122,122,12,3,12,1,49,176,6,0,176,7,
+		0,95,1,92,3,122,12,3,12,1,72,95,3,176,
+		6,0,176,7,0,95,1,92,2,122,12,3,12,1,
+		49,176,6,0,176,7,0,95,1,92,4,122,12,3,
+		12,1,72,176,7,0,95,1,92,5,12,2,20,5,
+		25,75,176,5,0,176,6,0,176,7,0,95,1,122,
+		122,12,3,12,1,176,6,0,176,7,0,95,1,92,
+		2,122,12,3,12,1,176,6,0,176,7,0,95,1,
+		92,3,122,12,3,12,1,176,6,0,176,7,0,95,
+		1,92,4,122,12,3,12,1,176,7,0,95,1,92,
+		5,12,2,20,5,100,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC( FT_RGNSTACK )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,1,5,116,10,0,95,1,106,5,112,117,115,104,
+		0,8,28,33,176,0,0,95,2,95,3,95,4,95,
+		5,12,4,176,9,0,103,1,0,104,2,0,172,12,
+		2,103,2,0,2,25,83,95,1,106,4,112,111,112,
+		0,8,31,17,95,1,106,8,112,111,112,32,97,108,
+		108,0,8,28,57,106,4,97,108,108,0,95,1,24,
+		28,5,121,25,6,103,2,0,17,80,6,103,2,0,
+		95,6,15,28,18,176,3,0,103,1,0,104,2,0,
+		158,169,1,20,1,25,234,176,9,0,103,1,0,103,
+		2,0,20,2,100,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
+HB_FUNC_INITSTATICS()
+{
+	static const HB_BYTE pcode[] =
+	{
+		117,10,0,2,0,116,10,0,4,0,0,82,1,0,
+		121,82,2,0,179,2,0,1,0,2,0,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+

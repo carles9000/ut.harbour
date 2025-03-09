@@ -1,0 +1,87 @@
+diff -ruN libhpdf.orig/hpdf.h libhpdf/hpdf.h
+--- libhpdf.orig/hpdf.h	2024-02-13 06:29:01.044028718 +0100
++++ libhpdf/hpdf.h	2017-02-02 16:09:36.813987868 +0100
+@@ -17,7 +17,7 @@
+ #ifndef _HPDF_H
+ #define _HPDF_H
+ 
+-#include "hpdf_config.h"
++#include "hpdfcfg.h"
+ #include "hpdfvers.h"
+ 
+ #define HPDF_UNUSED(a) ((void)(a))
+@@ -487,7 +487,7 @@
+                                const char   *uri);
+ 
+ 
+-HPDF_Annotation
++HPDF_EXPORT(HPDF_Annotation)
+ HPDF_Page_CreateTextMarkupAnnot (HPDF_Page     page,
+ 								HPDF_Rect      rect,
+ 								const char     *text,
+diff -ruN libhpdf.orig/hpdfimac.c libhpdf/hpdfimac.c
+--- libhpdf.orig/hpdfimac.c	2024-02-13 06:29:01.044028718 +0100
++++ libhpdf/hpdfimac.c	2017-02-02 16:09:36.829987215 +0100
+@@ -18,7 +18,7 @@
+ #include "hpdfconf.h"
+ #include "hpdfutil.h"
+ #include "hpdf.h"
+-#include <memory.h>
++#include <string.h>
+ #include <assert.h>
+ 
+ #define	G3CODES
+@@ -78,7 +78,7 @@
+ 
+ #define	Fax3State(tif)		(&(tif)->tif_data->b)
+ #define	EncoderState(tif)	((tif)->tif_data)
+-#define	isAligned(p,t)	((((unsigned long)(p)) & (sizeof (t)-1)) == 0)
++#define	isAligned(p,t)	((((size_t)(p)) & (sizeof (t)-1)) == 0)
+ 
+ /* NB: the uint32 casts are to silence certain ANSI-C compilers */
+ #define TIFFhowmany(x, y) ((((uint32)(x))+(((uint32)(y))-1))/((uint32)(y)))
+diff -ruN libhpdf.orig/hpdfpago.c libhpdf/hpdfpago.c
+--- libhpdf.orig/hpdfpago.c	2024-02-13 06:29:01.048028597 +0100
++++ libhpdf/hpdfpago.c	2017-02-02 16:09:36.829987215 +0100
+@@ -1155,7 +1155,7 @@
+         return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_FONT, 0);
+ 
+     if (size <= 0 || size > HPDF_MAX_FONTSIZE)
+-        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_FONT_SIZE, size);
++        return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_FONT_SIZE, (HPDF_STATUS)size);
+ 
+     if (page->mmgr != font->mmgr)
+         return HPDF_RaiseError (page->error, HPDF_PAGE_INVALID_FONT, 0);
+diff -ruN libhpdf.orig/hpdfstre.c libhpdf/hpdfstre.c
+--- libhpdf.orig/hpdfstre.c	2024-02-13 06:29:19.787627623 +0100
++++ libhpdf/hpdfstre.c	2024-02-13 06:28:08.935229442 +0100
+@@ -20,6 +20,8 @@
+ 
+ #ifndef UNDER_CE
+ #include <errno.h>
++#else
++#include <windows.h>
+ #endif
+ #ifndef HPDF_UNUSED
+ #define HPDF_UNUSED(a) ((void)(a))
+diff -ruN libhpdf.orig/hpdfutil.h libhpdf/hpdfutil.h
+--- libhpdf.orig/hpdfutil.h	2024-02-13 06:29:01.048028597 +0100
++++ libhpdf/hpdfutil.h	2017-02-02 16:09:36.829987215 +0100
+@@ -18,7 +18,7 @@
+ #ifndef _HPDF_UTILS_H
+ #define _HPDF_UTILS_H
+ 
+-#include "hpdf_config.h"
++#include "hpdfcfg.h"
+ #include "hpdftype.h"
+ 
+ #ifdef __cplusplus
+diff -ruN libhpdf.orig/t4.h libhpdf/t4.h
+--- libhpdf.orig/t4.h	2024-02-13 06:29:01.048028597 +0100
++++ libhpdf/t4.h	2017-02-02 16:09:36.833987051 +0100
+@@ -1,4 +1,4 @@
+-/* $Id: t4.h,v 1.20 2007/11/10 18:40:44 drolon Exp $ */
++/* $Id$ */
+ 
+ /*
+  * Copyright (c) 1988-1997 Sam Leffler

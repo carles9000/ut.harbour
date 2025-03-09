@@ -1,0 +1,61 @@
+/*
+ * Harbour 3.2.0dev (r2502031126)
+ * GNU C 7.5 (64-bit)
+ * Generated C source from "hbnf/aeminlen.prg"
+ */
+
+#include "hbvmpub.h"
+#include "hbinit.h"
+
+
+HB_FUNC( FT_AEMINLEN );
+HB_FUNC_EXTERN( __DEFAULTNIL );
+HB_FUNC_EXTERN( LEN );
+HB_FUNC_EXTERN( MIN );
+HB_FUNC_EXTERN( LTRIM );
+HB_FUNC_EXTERN( TRANSFORM );
+HB_FUNC_EXTERN( VALTYPE );
+
+
+HB_INIT_SYMBOLS_BEGIN( hb_vm_SymbolInit_AEMINLEN )
+{ "FT_AEMINLEN", {HB_FS_PUBLIC | HB_FS_LOCAL}, {HB_FUNCNAME( FT_AEMINLEN )}, NULL },
+{ "__DEFAULTNIL", {HB_FS_PUBLIC}, {HB_FUNCNAME( __DEFAULTNIL )}, NULL },
+{ "LEN", {HB_FS_PUBLIC}, {HB_FUNCNAME( LEN )}, NULL },
+{ "MIN", {HB_FS_PUBLIC}, {HB_FUNCNAME( MIN )}, NULL },
+{ "LTRIM", {HB_FS_PUBLIC}, {HB_FUNCNAME( LTRIM )}, NULL },
+{ "TRANSFORM", {HB_FS_PUBLIC}, {HB_FUNCNAME( TRANSFORM )}, NULL },
+{ "VALTYPE", {HB_FS_PUBLIC}, {HB_FUNCNAME( VALTYPE )}, NULL }
+HB_INIT_SYMBOLS_EX_END( hb_vm_SymbolInit_AEMINLEN, "hbnf/aeminlen.prg", 0x0, 0x0003 )
+
+#if defined( HB_PRAGMA_STARTUP )
+   #pragma startup hb_vm_SymbolInit_AEMINLEN
+#elif defined( HB_DATASEG_STARTUP )
+   #define HB_DATASEG_BODY    HB_DATASEG_FUNC( hb_vm_SymbolInit_AEMINLEN )
+   #include "hbiniseg.h"
+#endif
+
+HB_FUNC( FT_AEMINLEN )
+{
+	static const HB_BYTE pcode[] =
+	{
+		13,4,4,100,80,7,176,1,0,96,2,0,122,20,
+		2,176,1,0,96,3,0,122,20,2,176,1,0,96,
+		4,0,176,2,0,95,1,12,1,95,3,49,23,20,
+		2,176,3,0,95,3,95,4,72,17,176,2,0,95,
+		1,12,1,12,2,80,6,95,3,165,80,5,26,130,
+		0,176,2,0,95,1,95,5,1,12,1,80,8,25,
+		91,176,2,0,176,4,0,176,5,0,95,1,95,5,
+		1,95,2,1,106,3,64,88,0,12,2,12,1,12,
+		1,80,8,25,59,176,2,0,176,4,0,176,5,0,
+		95,1,95,5,1,106,3,64,88,0,12,2,12,1,
+		12,1,80,8,25,30,176,6,0,95,1,95,5,1,
+		12,1,133,3,0,106,2,67,0,25,164,106,2,65,
+		0,25,172,100,25,201,95,7,100,8,28,6,95,8,
+		25,11,176,3,0,95,7,95,8,12,2,80,7,175,
+		5,0,95,6,15,28,201,95,7,100,8,28,9,97,
+		239,255,0,0,80,7,95,7,110,7
+	};
+
+	hb_vmExecute( pcode, symbols );
+}
+
